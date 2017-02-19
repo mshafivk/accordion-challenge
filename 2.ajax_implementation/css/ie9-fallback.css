@@ -1,0 +1,18 @@
+/*Tabbed view for Wider screens  - Flex layout is not supported in IE9*/
+@media screen and (min-width: 768px) {
+    .accordion {
+      display: block;
+      width: 100%;
+    }
+    .accordion-header {
+        display: inline-block;
+        margin-right: -3px;
+    }
+    /*Need to adjust using absolute position for IE9*/
+    .accordion-content {
+        position: absolute;
+        top: auto;
+        left: 10px;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,55 @@
+.accordion-header {
+    padding: 10px;
+    background: #e8e5e5;
+    margin-bottom: 1px;
+    margin-right: 1px;
+    display: block;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+/*Setting all contents as hidden first*/
+
+.accordion-content {
+    width: 100%;
+    display: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+input.switch {
+    display: none;
+}
+
+input.switch:checked + .accordion-header + .accordion-content {
+    display: block;
+}
+
+input.switch:checked + .accordion-header {
+    background: #f9f9f9;
+    color: #c6c2c2;
+}
+
+
+/*Tabbed view for Wider screens  - Flex layout is not supported in IE9*/
+@media screen and (min-width: 768px) {
+    .accordion {
+        display: -webkit-box;
+        display: -ms-flexbox;      
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        /*wrap helps to add as much tabs as we need.Tabs will be added one line after another*/
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        /*Aligned from left*/
+        align-items: flex-start;
+    }
+    .accordion-header {
+    	-webkit-box-ordinal-group: 0;
+        -webkit-order: -1;/*negative ordering will help to stay always on top*/
+        -ms-flex-order: -1;
+        order: -1;
+    }
+}
